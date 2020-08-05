@@ -1,0 +1,50 @@
+<html>
+    <script>
+        function computerPlay(){
+            let which = Math.floor(Math.random()*3);
+            switch(which){
+                case 0:
+                    return "Rock";
+                    break;
+                case 1:
+                    return "Paper";
+                    break;
+                case 2:
+                    return "Scissors";
+                    break;
+            }
+        }
+
+        function playRound(playerSelection, computerSelection){
+            playerSelection = playerSelection.toLowerCase();
+            computerSelection = computerSelection.toLowerCase();
+            if (playerSelection === computerSelection){
+                return "Tied game."
+            } else if (playerSelection === 'rock'){
+                  if (computerSelection === 'scissors'){
+                      return "You win! Rock beats Scissors."
+                  } return "You lose! Paper beats Rock."
+            } else if (playerSelection === 'paper'){
+                  if (computerSelection === 'rock'){
+                      return "You win! Paper beats Rock."
+                  } return "You lose! Scissors beats Paper."
+            } else if (playerSelection === 'scissors'){
+                  if (computerSelection === 'paper'){
+                      return "You win! Scissors beats Paper."
+                  } return "You lose! Rock beats Scissors."
+            } else {
+                return "Invalid selection! No guns here.";
+            }
+        }
+
+        function game(){
+            console.log(playRound(prompt("Pick!", "ROCK"), computerPlay()));
+            console.log(playRound(prompt("Pick!", "ROCK"), computerPlay()));
+            console.log(playRound(prompt("Pick!", "ROCK"), computerPlay()));
+            console.log(playRound(prompt("Pick!", "ROCK"), computerPlay()));
+            console.log(playRound(prompt("Pick!", "ROCK"), computerPlay()));
+        }
+
+        game();
+    </script>
+</html>
